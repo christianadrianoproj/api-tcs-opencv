@@ -38,10 +38,8 @@ def imagens():
                 hsv = cv.cvtColor(imagem, cv.COLOR_BGR2HSV)
                 
                 print("definir faixa de cor verde em HSV")
-                #green_low = np.array([20 , 100, 50] )
-                #green_high = np.array([75, 255, 255])
-                green_low = [20 , 100, 50]
-                green_high = [75, 255, 255]
+                green_low = np.array([20 , 100, 50] )
+                green_high = np.array([75, 255, 255])
                 
                 print("Limita a imagem HSV para obter apenas cores verdes - cria uma mascara da folha")
                 mask = cv.inRange(hsv, green_low, green_high)
@@ -53,10 +51,8 @@ def imagens():
                 hsv2 = cv.cvtColor(res, cv.COLOR_BGR2HSV)
                 
                 print("definir faixa de cor da mancha em HSV")
-                #g_low  = np.array([0, 0, 230])
-                #g_high = np.array([50, 140, 255])
-                g_low  = [0, 0, 230]
-                g_high = [50, 140, 255]
+                g_low  = np.array([0, 0, 230])
+                g_high = np.array([50, 140, 255])
                 
                 print("Limita a imagem HSV para obter apenas cores das manchas - cria uma nova mascara das manchas")
                 mask2 = cv.inRange(hsv2, g_low, g_high)
